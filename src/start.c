@@ -1,7 +1,7 @@
-#include <stdlib.h>
+#include "stdlib.h"
 
 int main2();
 
 void _start() {
-    exit(main2());
+    exit2(main2());
 }
