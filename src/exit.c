@@ -9,4 +9,5 @@ void exit(int exit_code) {
     volatile register int rdi asm("%rdi") = exit_code;
     asm("syscall");
 #endif
+    while (1) {}
 }
