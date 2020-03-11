@@ -1,6 +1,6 @@
 #include "stdlib.h"
 
-void exit2(int exit_code) {
+void exit(int exit_code) {
 #if _WIN64 || __CYGWIN__
     volatile register int rdi asm("%rcx") = exit_code;
     asm("call ExitProcess");

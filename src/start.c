@@ -3,5 +3,5 @@
 int main2();
 
 void _start() {
-    exit2(main2());
+    exit(main2());
 }

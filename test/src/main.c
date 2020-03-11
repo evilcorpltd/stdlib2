@@ -6,6 +6,6 @@ int main2() {
     bool b = !a;
     (void)b;
 
-    exit2(100);
+    exit(100);
     return 50;
 }
