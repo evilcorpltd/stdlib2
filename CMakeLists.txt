@@ -27,9 +27,7 @@ target_link_options(${PROJECT_NAME}
 
 target_link_libraries(${PROJECT_NAME}
     PRIVATE
-        $<$<PLATFORM_ID:Windows>:
-            kernel32
-        >
+        $<$<PLATFORM_ID:Windows>:kernel32>
 )
 
 enable_testing()
