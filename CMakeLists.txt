@@ -6,7 +6,7 @@ add_library(${PROJECT_NAME}
     src/exit.c
     src/start.c
     $<$<PLATFORM_ID:Windows>:
-        src/platform/win_x86_64/_exit.s
+        src/platform/win_x86_64/_exit.c
     >
     $<$<PLATFORM_ID:Linux>:
         src/platform/linux_x86_64/_exit.s
