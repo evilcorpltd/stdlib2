@@ -15,6 +15,7 @@ STRING(REGEX REPLACE "[/|-]RTC(su|[1su])" "" CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAG
 add_library(${PROJECT_NAME}
     src/exit.c
     src/start.c
+    src/string.c
     $<$<PLATFORM_ID:Windows>:
         src/platform/win_x86_64/_exit.c
     >

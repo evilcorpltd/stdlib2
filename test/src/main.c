@@ -1,6 +1,7 @@
 #include "stdbool.h"
 #include "stddef.h"
 #include "stdlib.h"
+#include "string.h"
 
 struct S {
     char c;
@@ -27,6 +28,6 @@ int main2() {
         exit(2);
     }
 
-    exit(100);
+    exit(strlen("hello"));
     return 50;
 }
