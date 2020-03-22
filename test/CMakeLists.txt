@@ -1,12 +1,17 @@
 project(test_stdlib2)
 
-add_executable(${PROJECT_NAME}
-    src/main.c
-)
+function(make_test name)
+    add_executable(${name} src/test_${name}.c)
 
-add_test(${PROJECT_NAME} ${PROJECT_NAME})
+    target_link_libraries(${name}
+        PRIVATE
+            stdlib2
+    )
 
-target_link_libraries(${PROJECT_NAME}
-    PRIVATE
-        stdlib2
-)
+    add_test(${name} ${name})
+endfunction()
+
+make_test(exit)
+make_test(offsetof)
+make_test(strlen)
+make_test(types)
