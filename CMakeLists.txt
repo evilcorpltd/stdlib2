@@ -9,6 +9,9 @@ else()
     set(x86 0)
 endif()
 
+# Hack to fix MSVC's bad defaults.
+STRING(REGEX REPLACE "[/|-]RTC(su|[1su])" "" CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG}")
+
 add_library(${PROJECT_NAME}
     src/exit.c
     src/start.c
@@ -32,7 +35,13 @@ target_include_directories(${PROJECT_NAME}
 
 target_link_options(${PROJECT_NAME}
     PUBLIC
-        -nostdlib
+        $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:GNU>>:
+            -nostdlib
+        >
+        $<$<CXX_COMPILER_ID:MSVC>:
+            /NODEFAULTLIB
+            /ENTRY:_start
+        >
 )
 
 target_link_libraries(${PROJECT_NAME}
