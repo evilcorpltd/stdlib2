@@ -1,5 +1,5 @@
 #include <windows.h>
 
-void _exit(int exit_code) {
+void _Exit(int exit_code) {
     ExitProcess(exit_code);
 }
