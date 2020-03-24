@@ -10,9 +10,12 @@ add_subdirectory(warnings)
 add_library(${PROJECT_NAME}
     src/exit.c
     src/stdlib2_start.c
+    src/stdio.c
     src/string.c
     $<$<PLATFORM_ID:Windows>:
         src/platform/win_x86_64/_exit.c
+        src/platform/win_x86_64/_fd.c
+        src/platform/win_x86_64/_write.c
         src/start.c
     >
     $<$<AND:$<BOOL:${x86}>,$<PLATFORM_ID:Linux>>:
