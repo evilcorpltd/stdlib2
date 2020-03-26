@@ -1,14 +1,14 @@
 project(test_stdlib2)
 
 function(make_test name)
-    add_executable(${name} src/test_${name}.c)
+    add_executable(test_${name} src/test_${name}.c)
 
-    target_link_libraries(${name}
+    target_link_libraries(test_${name}
         PRIVATE
             stdlib2
     )
 
-    add_test(${name} ${name})
+    add_test(test_${name} test_${name})
 endfunction()
 
 make_test(exit)
