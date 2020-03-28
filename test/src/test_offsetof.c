@@ -2,7 +2,7 @@
 
 struct S {
     char c;
-    double d;
+    float d;
 };
 
 int main2() {
@@ -10,7 +10,7 @@ int main2() {
         return 1;
     }
 
-    if (offsetof(struct S, d) != 8) {
+    if (offsetof(struct S, d) != 4) {
         return 1;
     }
 
