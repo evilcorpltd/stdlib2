@@ -14,16 +14,19 @@ STRING(REGEX REPLACE "[/|-]RTC(su|[1su])" "" CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAG
 
 add_library(${PROJECT_NAME}
     src/exit.c
-    src/start.c
+    src/stdlib2_start.c
     src/string.c
     $<$<PLATFORM_ID:Windows>:
         src/platform/win_x86_64/_exit.c
+        src/start.c
     >
     $<$<AND:$<BOOL:${x86}>,$<PLATFORM_ID:Linux>>:
         src/platform/linux_x86/_exit.s
+        src/start.c
     >
     $<$<AND:$<NOT:${x86}>,$<PLATFORM_ID:Linux>>:
         src/platform/linux_x86_64/_exit.s
+        src/platform/linux_x86_64/_start.s
     >
 )
 

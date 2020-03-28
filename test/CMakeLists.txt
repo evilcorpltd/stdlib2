@@ -8,10 +8,13 @@ function(make_test name)
             stdlib2
     )
 
-    add_test(test_${name} test_${name})
+    add_test(NAME test_${name}
+        COMMAND test_${name} ${ARGN}
+    )
 endfunction()
 
 make_test(exit)
+make_test(main_args "hej")
 make_test(offsetof)
 make_test(strlen)
 make_test(types)
