@@ -23,15 +23,18 @@ jobs:
             os: ubuntu-18.04
             compiler: gcc
             version: "9"
+            configuration: Debug
 
           - name: ubuntu-18.04-clang-9
             os: ubuntu-18.04
             compiler: clang
             version: "9"
+            configuration: Debug
 
           - name: windows-2019-cl
             os: windows-2019
             cmake-args: -A x64
+            configuration: Debug
 
     steps:
       - uses: actions/checkout@v2
@@ -62,5 +65,5 @@ jobs:
         run: |
           cmake --version
           cmake -S . -B build ${{ matrix.cmake-args }}
-          cmake --build build
-          (cd build && ctest)
+          cmake --build build --config ${{ matrix.configuration }}
+          (cd build && ctest -C ${{ matrix.configuration }} )
