@@ -16,6 +16,7 @@ jobs:
       matrix:
         name:
           - ubuntu-18.04-gcc-9
+          - ubuntu-18.04-gcc-9-x86
           - ubuntu-18.04-clang-9
           - windows-2019-cl
         include:
@@ -24,6 +25,12 @@ jobs:
             compiler: gcc
             version: "9"
             configuration: Debug
+
+          - name: ubuntu-18.04-gcc-9-x86
+            os: ubuntu-18.04
+            compiler: gcc
+            version: "9"
+            cmake-args: -DCMAKE_TOOLCHAIN_FILE=cmake/toolchain-linux32.cmake
 
           - name: ubuntu-18.04-clang-9
             os: ubuntu-18.04
