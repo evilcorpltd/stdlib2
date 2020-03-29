@@ -15,7 +15,7 @@ add_library(${PROJECT_NAME}
     >
     $<$<AND:$<BOOL:${x86}>,$<PLATFORM_ID:Linux>>:
         src/platform/linux_x86/_exit.s
-        src/start.c
+        src/platform/linux_x86/_start.s
     >
     $<$<AND:$<NOT:${x86}>,$<PLATFORM_ID:Linux>>:
         src/platform/linux_x86_64/_exit.s
