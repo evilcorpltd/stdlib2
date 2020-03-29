@@ -14,7 +14,7 @@ function(make_test name)
 endfunction()
 
 make_test(exit)
-make_test(main_args "hej")
+make_test(main_args "hej" "san")
 make_test(memchr)
 make_test(memcmp)
 make_test(memcpy)
