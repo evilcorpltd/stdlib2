@@ -4,7 +4,11 @@ int main2() {
     const char a[] = "hello world";
     char b[20];
 
-    memcpy(b, a, sizeof(a));
+    char *ret = memcpy(b, a, sizeof(a));
+
+    if (ret != b) {
+        return 1;
+    }
 
     if (strlen(a) != strlen(b)) {
         return 1;
