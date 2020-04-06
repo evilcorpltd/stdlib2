@@ -8,5 +8,6 @@ void *memchr(const void *s, int c, size_t n);
 int memcmp(const void *lhs, const void *rhs, size_t count);
 void *memcpy(void *dst, const void *src, size_t n);
 size_t strlen(const char *str);
+void *memset(void *s, int c, size_t n);
 
 #endif
