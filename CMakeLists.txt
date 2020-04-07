@@ -35,6 +35,9 @@ target_compile_options(${PROJECT_NAME}
         $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:GNU>>:
             -nostdlib
         >
+        $<$<CXX_COMPILER_ID:MSVC>:
+            /GS-
+        >
 )
 
 target_link_options(${PROJECT_NAME}
