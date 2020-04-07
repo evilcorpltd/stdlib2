@@ -2,15 +2,8 @@ cmake_minimum_required(VERSION 3.13)
 
 project(stdlib2 C ASM)
 
-
-if(CMAKE_SYSTEM_PROCESSOR STREQUAL "i386")
-    set(x86 1)
-else()
-    set(x86 0)
-endif()
-
-# Hack to fix MSVC's bad defaults.
-STRING(REGEX REPLACE "[/|-]RTC(su|[1su])" "" CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG}")
+include(cmake/platform_setup.cmake)
+include(cmake/compiler_workarounds.cmake)
 
 add_library(${PROJECT_NAME}
     src/exit.c
