@@ -16,7 +16,7 @@ add_library(${PROJECT_NAME}
         src/platform/win_x86_64/_exit.c
         src/platform/win_x86_64/_fd.c
         src/platform/win_x86_64/_write.c
-        src/start.c
+        src/platform/win_x86_64/start.c
     >
     $<$<PLATFORM_ID:Linux>:
         src/platform/linux/_fd.c
