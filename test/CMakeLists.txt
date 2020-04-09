@@ -32,11 +32,6 @@ make_test(strcmp)
 make_test(strtok)
 make_test(types)
 
-if (WIN32)
-   # Missing support for args on Windows
-   set_tests_properties(test_main_args PROPERTIES WILL_FAIL TRUE)
-endif()
-
 if(x86 AND UNIX)
     # I/O isn't implemented for Linux x86.
     set_tests_properties(test_fputc PROPERTIES WILL_FAIL TRUE)
