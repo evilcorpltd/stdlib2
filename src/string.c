@@ -37,15 +37,6 @@ void *memcpy(void *s1, const void *s2, size_t n) {
     return s1;
 }
 
-size_t strlen(const char *str) {
-    size_t len = 0;
-    while (str[len] != NULL) {
-        ++len;
-    }
-
-    return len;
-}
-
 void *memset(void *s, int c, size_t n) {
     unsigned char *s_ = s;
     const unsigned char c_ = (unsigned char)c;
@@ -53,4 +44,23 @@ void *memset(void *s, int c, size_t n) {
         s_[i] = c_;
     }
     return s;
+}
+
+char *strchr(const char *s, int c) {
+    const char c_ = (char)c;
+    do {
+        if (*s == c_) {
+            return s;
+        }
+    } while (*s++ != NULL);
+    return NULL;
+}
+
+size_t strlen(const char *str) {
+    size_t len = 0;
+    while (str[len] != NULL) {
+        ++len;
+    }
+
+    return len;
 }
