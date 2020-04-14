@@ -32,20 +32,20 @@ target_include_directories(${PROJECT_NAME}
 
 target_compile_options(${PROJECT_NAME}
     PUBLIC
-        $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:GNU>>:
+        $<$<OR:$<C_COMPILER_ID:Clang>,$<C_COMPILER_ID:GNU>>:
             -nostdlib
         >
-        $<$<CXX_COMPILER_ID:MSVC>:
+        $<$<C_COMPILER_ID:MSVC>:
             /GS-
         >
 )
 
 target_link_options(${PROJECT_NAME}
     PUBLIC
-        $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:GNU>>:
+        $<$<OR:$<C_COMPILER_ID:Clang>,$<C_COMPILER_ID:GNU>>:
             -nostdlib
         >
-        $<$<CXX_COMPILER_ID:MSVC>:
+        $<$<C_COMPILER_ID:MSVC>:
             /NODEFAULTLIB
             /ENTRY:_start
         >
