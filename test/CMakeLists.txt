@@ -28,6 +28,7 @@ make_test(strchr)
 make_test(strcspn)
 make_test(strlen)
 make_test(strcmp)
+make_test(strtok)
 make_test(types)
 
 if (WIN32)
