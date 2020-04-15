@@ -25,6 +25,7 @@ make_test(putc)
 make_test(puts)
 make_test(strchr)
 make_test(strlen)
+make_test(strcmp)
 make_test(types)
 
 if (WIN32)

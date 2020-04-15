@@ -56,6 +56,16 @@ char *strchr(const char *s, int c) {
     return NULL;
 }
 
+int strcmp(const char *lhs, const char *rhs) {
+    for (; *lhs == *rhs; ++lhs, ++rhs) {
+        if (*lhs == '\0') {
+            return 0;
+        }
+    }
+    const int res = *lhs - *rhs;
+    return res;
+}
+
 size_t strlen(const char *str) {
     size_t len = 0;
     while (str[len] != NULL) {
