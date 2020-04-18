@@ -5,6 +5,8 @@ project(stdlib2 C ASM)
 include(cmake/platform_setup.cmake)
 include(cmake/compiler_workarounds.cmake)
 
+add_subdirectory(warnings)
+
 add_library(${PROJECT_NAME}
     src/exit.c
     src/stdlib2_start.c
@@ -53,6 +55,7 @@ target_link_options(${PROJECT_NAME}
 
 target_link_libraries(${PROJECT_NAME}
     PRIVATE
+        stdlib2::warnings
         $<$<PLATFORM_ID:Windows>:kernel32>
 )
 
