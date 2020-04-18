@@ -50,7 +50,7 @@ char *strchr(const char *s, int c) {
     const char c_ = (char)c;
     do {
         if (*s == c_) {
-            return s;
+            return (char *)s;
         }
     } while (*s++ != NULL);
     return NULL;
