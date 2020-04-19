@@ -8,6 +8,13 @@ function(make_test name)
             stdlib2
     )
 
+    target_compile_options(test_${name}
+        PRIVATE
+            $<$<C_COMPILER_ID:MSVC>:
+                /utf-8
+            >
+    )
+
     add_test(NAME test_${name}
         COMMAND test_${name} ${ARGN}
     )
@@ -32,3 +39,6 @@ make_test(strlen)
 make_test(strcmp)
 make_test(strtok)
 make_test(types)
+make_test(wcscmp)
+make_test(wcscpy)
+make_test(wcslen)

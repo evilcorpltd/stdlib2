@@ -12,6 +12,7 @@ add_library(${PROJECT_NAME}
     src/stdlib2_start.c
     src/stdio.c
     src/string.c
+    src/wchar.c
     $<$<PLATFORM_ID:Windows>:
         src/platform/windows/_exit.c
         src/platform/windows/_fd.c
@@ -48,6 +49,10 @@ target_compile_options(${PROJECT_NAME}
         >
         $<$<C_COMPILER_ID:MSVC>:
             /GS-
+        >
+    PRIVATE
+        $<$<C_COMPILER_ID:MSVC>:
+            /utf-8
         >
 )
 

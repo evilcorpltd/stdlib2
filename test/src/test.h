@@ -61,5 +61,10 @@
         if ((a) != (b))     \
             return 1;       \
     } while (false)
+#define ASSERT_WCHAR_EQ(a, b) \
+    do {                      \
+        if ((a) != (b))       \
+            return 1;         \
+    } while (false)
 
 #endif
