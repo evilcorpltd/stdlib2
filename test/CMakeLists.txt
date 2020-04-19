@@ -23,3 +23,8 @@ make_test(offsetof)
 make_test(strchr)
 make_test(strlen)
 make_test(types)
+
+if (WIN32)
+   # Missing support for args on Windows
+   set_tests_properties(test_main_args PROPERTIES WILL_FAIL TRUE)
+endif()
