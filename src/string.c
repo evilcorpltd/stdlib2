@@ -66,6 +66,19 @@ int strcmp(const char *lhs, const char *rhs) {
     return res;
 }
 
+size_t strcspn(const char *s1, const char *s2) {
+    size_t res = 0;
+    while (*s1 != '\0') {
+        if (strchr(s2, *s1) == NULL) {
+            ++s1;
+            ++res;
+        } else {
+            return res;
+        }
+    }
+    return res;
+}
+
 size_t strlen(const char *str) {
     size_t len = 0;
     while (str[len] != '\0') {
