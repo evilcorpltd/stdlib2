@@ -18,6 +18,9 @@ add_library(${PROJECT_NAME}
         src/platform/win_x86_64/_write.c
         src/start.c
     >
+    $<$<PLATFORM_ID:Linux>:
+        src/platform/linux/stubs.c
+    >
     $<$<AND:$<BOOL:${x86}>,$<PLATFORM_ID:Linux>>:
         src/platform/linux_x86/_exit.s
         src/platform/linux_x86/_start.s
