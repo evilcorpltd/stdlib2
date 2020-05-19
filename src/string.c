@@ -52,7 +52,7 @@ char *strchr(const char *s, int c) {
         if (*s == c_) {
             return (char *)s;
         }
-    } while (*s++ != NULL);
+    } while (*s++ != '\0');
     return NULL;
 }
 
@@ -68,7 +68,7 @@ int strcmp(const char *lhs, const char *rhs) {
 
 size_t strlen(const char *str) {
     size_t len = 0;
-    while (str[len] != NULL) {
+    while (str[len] != '\0') {
         ++len;
     }
 
