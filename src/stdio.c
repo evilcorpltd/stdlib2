@@ -15,6 +15,15 @@ int fputc(int ch, FILE *stream) {
     return c;
 }
 
+int fputs(const char *str, FILE *stream) {
+    int r = _Write(stream, str, strlen(str));
+    if (r < 0) {
+        return EOF;
+    }
+
+    return r;
+}
+
 int putc(int ch, FILE *stream) {
     return fputc(ch, stream);
 }

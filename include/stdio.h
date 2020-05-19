@@ -13,6 +13,7 @@ FILE *__stderr(void);
 #define stderr __stderr()
 
 int fputc(int ch, FILE *stream);
+int fputs(const char *str, FILE *stream);
 int putc(int ch, FILE *stream);
 int puts(const char *str);
 
