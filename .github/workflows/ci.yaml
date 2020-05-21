@@ -70,9 +70,11 @@ jobs:
         run: |
           python -m pip install cmake==3.14.4 --upgrade
 
-      - name: Build and test
+      - name: Build
         run: |
-          cmake --version
           cmake -S . -B build ${{ matrix.cmake-args }}
           cmake --build build --config ${{ matrix.configuration }}
+
+      - name: Test
+        run: |
           (cd build && ctest -C ${{ matrix.configuration }} )
