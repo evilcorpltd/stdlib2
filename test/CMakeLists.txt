@@ -36,8 +36,8 @@ if (WIN32)
    set_tests_properties(test_main_args PROPERTIES WILL_FAIL TRUE)
 endif()
 
-if(NOT WIN32)
-    # I/O isn't implemented outside of Windows.
+if(x86 AND UNIX)
+    # I/O isn't implemented for Linux x86.
     set_tests_properties(test_fputc PROPERTIES WILL_FAIL TRUE)
     set_tests_properties(test_fputs PROPERTIES WILL_FAIL TRUE)
     set_tests_properties(test_fwrite PROPERTIES WILL_FAIL TRUE)
