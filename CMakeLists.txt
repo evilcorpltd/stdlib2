@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.13)
 
-project(stdlib2 C ASM)
+project(stdlib2 LANGUAGES C)
 
 include(cmake/platform_setup.cmake)
 include(cmake/compiler_workarounds.cmake)
