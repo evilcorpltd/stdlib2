@@ -1,4 +1,4 @@
-project(test_stdlib2)
+project(test_stdlib2 LANGUAGES C)
 
 function(make_test name)
     add_executable(test_${name} src/test_${name}.c)
