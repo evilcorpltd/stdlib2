@@ -31,12 +31,3 @@ make_test(strlen)
 make_test(strcmp)
 make_test(strtok)
 make_test(types)
-
-if(x86 AND UNIX)
-    # I/O isn't implemented for Linux x86.
-    set_tests_properties(test_fputc PROPERTIES WILL_FAIL TRUE)
-    set_tests_properties(test_fputs PROPERTIES WILL_FAIL TRUE)
-    set_tests_properties(test_fwrite PROPERTIES WILL_FAIL TRUE)
-    set_tests_properties(test_putc PROPERTIES WILL_FAIL TRUE)
-    set_tests_properties(test_puts PROPERTIES WILL_FAIL TRUE)
-endif()

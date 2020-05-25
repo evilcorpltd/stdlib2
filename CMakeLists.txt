@@ -20,17 +20,17 @@ add_library(${PROJECT_NAME}
     >
     $<$<PLATFORM_ID:Linux>:
         src/platform/linux/_fd.c
+        src/platform/linux/_write.c
     >
     $<$<AND:$<BOOL:${x86}>,$<PLATFORM_ID:Linux>>:
         src/platform/linux_x86/_exit.s
         src/platform/linux_x86/_start.s
-        src/platform/linux_x86/stubs.c
+        src/platform/linux_x86/_write.s
     >
     $<$<AND:$<NOT:${x86}>,$<PLATFORM_ID:Linux>>:
-        src/platform/linux_x86_64/_asm_write.s
         src/platform/linux_x86_64/_exit.s
         src/platform/linux_x86_64/_start.s
-        src/platform/linux_x86_64/_write.c
+        src/platform/linux_x86_64/_write.s
     >
 )
 
