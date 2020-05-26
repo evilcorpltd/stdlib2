@@ -1,22 +1,13 @@
 #include "string.h"
 
+#include "test.h"
+
 int main2() {
     const char a[] = "hello world";
     char b[20];
 
-    char *ret = memcpy(b, a, sizeof(a));
-
-    if (ret != b) {
-        return 1;
-    }
-
-    if (strlen(a) != strlen(b)) {
-        return 1;
-    }
-
-    if (memcmp(a, b, sizeof(a)) != 0) {
-        return 1;
-    }
-
+    ASSERT_PTR_EQ(memcpy(b, a, sizeof(a)), b);
+    ASSERT_INT_EQ(strlen(a), strlen(b));
+    ASSERT_INT_EQ(memcmp(a, b, sizeof(a)), 0);
     return 0;
 }

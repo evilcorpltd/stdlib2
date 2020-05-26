@@ -1,9 +1,8 @@
 #include "stdio.h"
 
-int main2() {
-    if (puts("domo arigato mr robotto") <= 0) {
-        return 1;
-    }
+#include "test.h"
 
+int main2() {
+    ASSERT_INT_GT(puts("domo arigato mr robotto"), 0);
     return 0;
 }
