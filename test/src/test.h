@@ -66,5 +66,10 @@
         if ((a) != (b))       \
             return 1;         \
     } while (false)
+#define ASSERT_FLOAT_NEAR(a, b, e)              \
+    do {                                        \
+        if ((a) + (e) < (b) || (a) > (b) + (e)) \
+            return 1;                           \
+    } while (false)
 
 #endif

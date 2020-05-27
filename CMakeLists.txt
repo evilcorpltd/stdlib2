@@ -9,12 +9,14 @@ add_subdirectory(warnings)
 
 add_library(${PROJECT_NAME}
     src/exit.c
+    src/math.c
     src/stdlib2_start.c
     src/stdio.c
     src/string.c
     src/wchar.c
     $<$<PLATFORM_ID:Windows>:
         src/platform/windows/_exit.c
+        src/platform/windows/_math.c
         src/platform/windows/_fd.c
         src/platform/windows/_write.c
         src/platform/windows/start.c
