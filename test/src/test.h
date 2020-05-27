@@ -46,6 +46,11 @@
         if ((a) <= (b))     \
             return 1;       \
     } while (false)
+#define ASSERT_INT_GE(a, b) \
+    do {                    \
+        if ((a) < (b))      \
+            return 1;       \
+    } while (false)
 #define ASSERT_INT_LT(a, b) \
     do {                    \
         if ((a) >= (b))     \
