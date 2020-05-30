@@ -13,10 +13,10 @@ add_library(${PROJECT_NAME}
     src/stdio.c
     src/string.c
     $<$<PLATFORM_ID:Windows>:
-        src/platform/win_x86_64/_exit.c
-        src/platform/win_x86_64/_fd.c
-        src/platform/win_x86_64/_write.c
-        src/platform/win_x86_64/start.c
+        src/platform/windows/_exit.c
+        src/platform/windows/_fd.c
+        src/platform/windows/_write.c
+        src/platform/windows/start.c
     >
     $<$<PLATFORM_ID:Linux>:
         src/platform/linux/_fd.c
