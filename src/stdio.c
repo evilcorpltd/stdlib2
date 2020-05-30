@@ -10,7 +10,7 @@
 
 // TODO(robinlinden): Set error indicator on stream.
 int fputc(int ch, FILE *stream) {
-    unsigned char c = ch;
+    unsigned char c = (unsigned char)ch;
     int r = _Write(stream, &c, 1);
     if (r < 0) {
         return EOF;

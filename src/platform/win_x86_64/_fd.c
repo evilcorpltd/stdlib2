@@ -2,7 +2,7 @@
 
 #include "file.h"
 
-#include <windows.h>
+#include "windows_workaround.h"
 
 static FILE _Stdin = {
     .fd = FD_NOT_SET,

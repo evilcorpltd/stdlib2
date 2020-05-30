@@ -1,7 +1,7 @@
 #include "stddef.h"
 #include "stdlib.h"
 
-#include <windows.h>
+#include "windows_workaround.h"
 
 int _stdlib2_start();
 

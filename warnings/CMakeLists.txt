@@ -18,5 +18,6 @@ target_compile_options(${PROJECT_NAME} INTERFACE
     $<$<C_COMPILER_ID:MSVC>:
         /permissive-;
         /W4;
+        /WX;
     >
 )
