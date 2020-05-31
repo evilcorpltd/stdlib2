@@ -33,9 +33,14 @@ jobs:
             version: "9"
             configuration: Debug
 
-          - name: windows-2019-cl
+          - name: windows-2019-cl-x64
             os: windows-2019
             cmake-args: -A x64
+            configuration: Debug
+
+          - name: windows-2019-cl-x86
+            os: windows-2019
+            cmake-args: -A Win32
             configuration: Debug
 
     steps:
