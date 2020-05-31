@@ -1,0 +1,39 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  ci:
+    name: ubuntu-18.04-${{ matrix.name }}
+    runs-on: ubuntu-18.04
+
+    env:
+      CTEST_OUTPUT_ON_FAILURE: ON
+      CTEST_PARALLEL_LEVEL: 2
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: mingw-x64
+            cmake-args: -DCMAKE_TOOLCHAIN_FILE=toolchain/windows-x64.cmake
+
+          - name: mingw-x86
+            cmake-args: -DCMAKE_TOOLCHAIN_FILE=toolchain/windows-x86.cmake
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install
+        run: |
+          echo "::add-path::/home/runner/.local/bin"
+          python3 -m pip install pip --upgrade
+          python3 -m pip install cmake==3.14.4 --upgrade
+
+          sudo apt update
+          sudo apt-get install mingw-w64
+
+      - name: Build
+        run: |
+          cmake -S . -B build ${{ matrix.cmake-args }}
+          cmake --build build
