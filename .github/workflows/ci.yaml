@@ -25,7 +25,7 @@ jobs:
             os: ubuntu-18.04
             compiler: gcc
             version: "9"
-            cmake-args: -DCMAKE_TOOLCHAIN_FILE=cmake/toolchain-linux32.cmake
+            cmake-args: -DCMAKE_TOOLCHAIN_FILE=toolchain/linux-x86.cmake
 
           - name: ubuntu-18.04-clang-9
             os: ubuntu-18.04
