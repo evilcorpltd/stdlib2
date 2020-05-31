@@ -14,11 +14,6 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        name:
-          - ubuntu-18.04-gcc-9
-          - ubuntu-18.04-gcc-9-x86
-          - ubuntu-18.04-clang-9
-          - windows-2019-cl
         include:
           - name: ubuntu-18.04-gcc-9
             os: ubuntu-18.04
